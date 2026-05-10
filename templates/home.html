@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<div class="row align-items-center py-5">
+
+    <div class="col-lg-6">
+
+        <h1 class="display-4 fw-bold mb-3">
+            Welcome to NotesApp
+        </h1>
+
+        <p class="lead text-muted mb-4">
+            Organize your thoughts, save important notes,
+            and manage your daily tasks easily with our
+            modern Flask Notes Application.
+        </p>
+
+        <div class="d-flex gap-3">
+
+            <a href="{{ url_for('register') }}"
+               class="btn btn-primary btn-lg">
+                Get Started
+            </a>
+
+            <a href="{{ url_for('login') }}"
+               class="btn btn-outline-dark btn-lg">
+                Login
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="col-lg-6 text-center mt-5 mt-lg-0">
+
+        <img
+            src="https://cdn-icons-png.flaticon.com/512/3209/3209265.png"
+            class="img-fluid"
+            style="max-width:400px;"
+        >
+
+    </div>
+
+</div>
+
+<!-- Features -->
+
+<div class="row mt-5 g-4">
+
+    <div class="col-md-4">
+
+        <div class="card h-100 text-center p-4">
+
+            <div class="mb-3">
+                <i class="bi bi-journal-text fs-1 text-primary"></i>
+            </div>
+
+            <h4>Create Notes</h4>
+
+            <p class="text-muted">
+                Add and organize your important notes quickly.
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-4">
+
+        <div class="card h-100 text-center p-4">
+
+            <div class="mb-3">
+                <i class="bi bi-search fs-1 text-primary"></i>
+            </div>
+
+            <h4>Search Notes</h4>
+
+            <p class="text-muted">
+                Easily search notes using titles and content.
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-4">
+
+        <div class="card h-100 text-center p-4">
+
+            <div class="mb-3">
+                <i class="bi bi-shield-lock fs-1 text-primary"></i>
+            </div>
+
+            <h4>Secure Access</h4>
+
+            <p class="text-muted">
+                User authentication keeps your notes protected.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

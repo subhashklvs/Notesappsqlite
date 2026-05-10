@@ -1,0 +1,146 @@
+{% extends 'base.html' %}
+{% block title %}Login — NotesApp{% endblock %}
+
+{% block content %}
+
+<div class="container">
+
+  <div
+    class="row justify-content-center align-items-center"
+    style="min-height:88vh;"
+  >
+
+    <div class="col-md-6 col-lg-5 col-xl-4">
+
+      <!-- Login Card -->
+
+      <div class="card border-0 shadow-lg rounded-4 overflow-hidden">
+
+        <!-- Header -->
+
+        <div class="auth-header text-center py-3">
+
+          <i class="bi bi-lock-fill fs-2 mb-2 d-block"></i>
+
+          <h3 class="fw-bold mb-1">
+            Welcome Back
+          </h3>
+
+          <p class="mb-0 small text-light">
+            Login to access your notes
+          </p>
+
+        </div>
+
+        <!-- Body -->
+
+        <div class="card-body p-4">
+
+          <form
+            method="POST"
+            action="{{ url_for('login') }}"
+          >
+
+            <!-- Email -->
+
+            <div class="mb-3">
+
+              <label
+                for="email"
+                class="form-label fw-semibold small"
+              >
+                Email Address
+              </label>
+
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                name="email"
+                placeholder="Enter your email"
+                required
+                autofocus
+              >
+
+            </div>
+
+            <!-- Password -->
+
+            <div class="mb-3">
+
+              <label
+                for="password"
+                class="form-label fw-semibold small"
+              >
+                Password
+              </label>
+
+              <input
+                type="password"
+                class="form-control"
+                id="password"
+                name="password"
+                placeholder="Enter your password"
+                required
+              >
+
+            </div>
+
+            <!-- Forgot Password -->
+
+            <div class="text-end mb-3">
+
+              <a
+                href="{{ url_for('forgot') }}"
+                class="text-decoration-none small"
+              >
+                Forgot Password?
+              </a>
+
+            </div>
+
+            <!-- Login Button -->
+
+            <button
+              type="submit"
+              class="btn btn-primary w-100 py-2 fw-bold"
+            >
+
+              <i class="bi bi-box-arrow-in-right me-1"></i>
+
+              Login
+
+            </button>
+
+          </form>
+
+          <!-- Footer -->
+
+          <div class="text-center mt-4">
+
+            <p class="text-muted small mb-0">
+
+              Don't have an account?
+
+              <a
+                href="{{ url_for('register') }}"
+                class="text-decoration-none fw-bold"
+              >
+                Register
+              </a>
+
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,120 @@
+{% extends 'base.html' %}
+
+{% block title %}Contact{% endblock %}
+
+{% block content %}
+
+<div class="row justify-content-center">
+
+    <div class="col-lg-7">
+
+        <div class="card">
+
+            <div class="card-header">
+                <i class="bi bi-envelope-fill me-2"></i>
+                Contact Us
+            </div>
+
+            <div class="card-body p-4">
+
+                <form method="POST">
+
+                    <!-- Full Name -->
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+                            Full Name
+                        </label>
+
+                        <input
+                            type="text"
+                            name="fullname"
+                            class="form-control"
+                            placeholder="Enter your full name"
+                            required
+                        >
+
+                    </div>
+
+                    <!-- Email -->
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            name="email"
+                            class="form-control"
+                            placeholder="Enter your email"
+                            required
+                        >
+
+                    </div>
+
+                    <!-- Message -->
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+                            Message
+                        </label>
+
+                        <textarea
+                            name="message"
+                            class="form-control"
+                            rows="5"
+                            placeholder="Write your message..."
+                            required
+                        ></textarea>
+
+                    </div>
+
+                    <!-- Button -->
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary w-100"
+                    >
+                        Send Message
+                    </button>
+
+                </form>
+
+                <hr class="my-4">
+
+                <div class="text-center">
+
+                    <h5 class="mb-3">
+                        Contact Information
+                    </h5>
+
+                    <p class="mb-2">
+                        <i class="bi bi-envelope-fill me-2"></i>
+                        subhashklvs@gmail.com
+                    </p>
+
+                    <p class="mb-2">
+                        <i class="bi bi-linkedin me-2"></i>
+                        www.linkedin.com/in/subhashkokkirala
+                    </p>
+
+                    <p class="mb-0">
+                        <i class="bi bi-geo-alt-fill me-2"></i>
+                        Andhra Pradesh, India
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
