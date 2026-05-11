@@ -2,8 +2,10 @@
 {% block title %}Forgot Password — NotesApp{% endblock %}
 
 {% block content %}
-<div class="auth-wrapper">
-  <div class="col-md-5 col-lg-4 mx-auto w-100" style="max-width:420px;">
+
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 85vh;">
+
+  <div class="w-100" style="max-width: 420px;">
 
     {% with messages = get_flashed_messages(with_categories=true) %}
       {% if messages %}
@@ -16,41 +18,58 @@
       {% endif %}
     {% endwith %}
 
-    <div class="auth-card card">
-      <div class="auth-header">
-        <i class="bi bi-key-fill fs-1 mb-2 d-block"></i>
-        <h2>Reset Password</h2>
-        <p>Enter your email and a new password</p>
-      </div>
+    <div class="card shadow border-0 rounded-4">
+
       <div class="card-body p-4">
+
+        <!-- Header -->
+        <div class="text-center mb-4">
+          <i class="bi bi-key-fill fs-1 text-warning"></i>
+          <h3 class="mt-2 mb-1">Reset Password</h3>
+          <p class="text-muted mb-0">Enter your email and new password</p>
+        </div>
+
+        <!-- Form -->
         <form method="POST" action="{{ url_for('forgot') }}">
+
           <div class="mb-3">
-            <label for="email">Registered Email</label>
-            <input type="email" class="form-control mt-1" id="email" name="email"
-                   placeholder="you@example.com" required autofocus/>
+            <label class="form-label">Registered Email</label>
+            <input type="email" class="form-control" name="email"
+                   placeholder="you@example.com" required autofocus>
           </div>
+
           <div class="mb-3">
-            <label for="new_password">New Password</label>
-            <input type="password" class="form-control mt-1" id="new_password" name="new_password"
-                   placeholder="New password" required/>
+            <label class="form-label">New Password</label>
+            <input type="password" class="form-control" name="new_password"
+                   placeholder="New password" required>
           </div>
+
           <div class="mb-4">
-            <label for="confirm_password">Confirm Password</label>
-            <input type="password" class="form-control mt-1" id="confirm_password" name="confirm_password"
-                   placeholder="Repeat new password" required/>
+            <label class="form-label">Confirm Password</label>
+            <input type="password" class="form-control" name="confirm_password"
+                   placeholder="Confirm password" required>
           </div>
+
           <button type="submit" class="btn btn-warning w-100 py-2">
             <i class="bi bi-arrow-clockwise me-2"></i>Reset Password
           </button>
+
         </form>
-        <hr class="my-3"/>
-        <p class="text-center text-muted mb-0" style="font-size:.93rem;">
-          Remembered it?
-          <a href="{{ url_for('login') }}" class="text-decoration-none fw-bold">Back to Login</a>
+
+        <hr class="my-3">
+
+        <p class="text-center text-muted mb-0">
+          Remember password?
+          <a href="{{ url_for('login') }}" class="fw-bold text-decoration-none">
+            Back to Login
+          </a>
         </p>
+
       </div>
     </div>
 
   </div>
+
 </div>
+
 {% endblock %}
